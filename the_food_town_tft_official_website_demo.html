@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFT | The Food Town — Where Flavors Meet Stories (Mumbai, Thane & MMR)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans & Great Vibes for Neon Script -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: {
+                            950: '#110F0D',
+                            900: '#161412',
+                            800: '#1E1B18',
+                            700: '#2C2723',
+                        },
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#FAF6F0',
+                            200: '#F3ECE1',
+                            300: '#E6DBC8',
+                        },
+                        amberGold: {
+                            200: '#F1DEC9',
+                            300: '#E5C19C',
+                            400: '#D4A373',
+                            500: '#C8925A',
+                            600: '#A8733E',
+                        },
+                        sage: {
+                            400: '#8FA882',
+                            500: '#728E64',
+                            600: '#557147',
+                        },
+                        terracotta: {
+                            400: '#D97F69',
+                            500: '#C96A52',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        neon: ['"Great Vibes"', 'cursive'],
+                    },
+                    boxShadow: {
+                        'warm': '0 20px 45px -15px rgba(212, 163, 115, 0.22)',
+                        'card': '0 14px 35px -10px rgba(0, 0, 0, 0.45)',
+                        'neonPink': '0 0 25px rgba(244, 114, 182, 0.55)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #161412;
+            color: #FAF6F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Neon Pink Script Effect inspired by Ghatkopar Outlet Wall */
+        .neon-script {
+            color: #fce7f3;
+            text-shadow: 0 0 7px #f472b6, 0 0 18px #ec4899, 0 0 32px #db2777;
+        }
+
+        /* Subtle Botanical & Culinary Line Art Pattern for Footer & Cream Sections */
+        .culinary-pattern {
+            background-image: radial-gradient(rgba(212, 163, 115, 0.14) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Hide scrollbars on horizontal filter rails */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Hero Slide Crossfade Transition */
+        .hero-slide {
+            transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s ease-out;
+        }
+
+        /* Custom Date/Time Picker Indicator in Dark Mode */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.8) sepia(0.5) saturate(1.5) hue-rotate(340deg);
+            cursor: pointer;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amberGold-400 selection:text-espresso-950">
+
+    <!-- A1. Top Announcement Bar -->
+    <div class="bg-espresso-950 border-b border-amberGold-400/20 py-2.5 px-4 text-xs text-cream-200/85">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex h-2 w-2 rounded-full bg-sage-400 animate-ping"></span>
+                <span class="font-semibold tracking-wider uppercase text-[11px] text-amberGold-300">Open Monday – Sunday · 11:00 AM – 12:00 Midnight</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-cream-200/65">
+                <span>Indian</span><span>•</span>
+                <span>Western</span><span>•</span>
+                <span>Continental</span><span>•</span>
+                <span>Oriental</span><span>•</span>
+                <span>Fusion</span>
+            </div>
+            <div class="flex items-center gap-4 text-[11px]">
+                <a href="tel:+918433845309" class="hover:text-amberGold-400 transition-colors flex items-center gap-1 font-medium">
+                    <i data-lucide="phone-call" class="w-3 h-3 text-amberGold-400"></i>
+                    <span>HQ: +91 84338 45309</span>
+                </a>
+                <a href="https://www.instagram.com/the_food_town_india/" target="_blank" rel="noopener noreferrer" class="text-amberGold-400 hover:underline font-semibold hidden sm:inline">
+                    @the_food_town_india
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- A2. Sticky Glassmorphic Navbar with Authentic TFT Circular Emblem -->
+    <header id="navbar" class="sticky top-0 z-50 bg-espresso-900/90 backdrop-blur-xl border-b border-amberGold-400/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Authentic Circular TFT Crown Emblem Badge -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-cream-100 p-1 border-2 border-amberGold-400 shadow-warm flex flex-col items-center justify-center text-espresso-950 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full rounded-full border border-dashed border-espresso-900/40 flex flex-col items-center justify-center leading-none px-1">
+                        <!-- Crown SVG -->
+                        <svg class="w-4 h-3 text-amberGold-600 mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 19h20v2H2v-2zm0-11l5 4 5-6 5 6 5-4v9H2V8z"/>
+                        </svg>
+                        <span class="font-serif font-extrabold text-sm sm:text-base tracking-tighter text-espresso-950">TFT</span>
+                        <span class="text-[6px] uppercase tracking-widest font-bold text-amberGold-600">THE FOOD TOWN</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-cream-100">THE FOOD TOWN</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-amberGold-400">
+                        <span>Aesthetic Café & Dining</span>
+                        <span>•</span>
+                        <span class="text-sage-400 font-semibold">7 Outlets in MMR</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-[0.14em] font-semibold text-cream-200/85">
+                <a href="#about" class="hover:text-amberGold-400 transition-colors">About Us</a>
+                <a href="#foodfolio" class="hover:text-amberGold-400 transition-colors">Foodfolio & Menu</a>
+                <a href="#outlets" class="hover:text-amberGold-400 transition-colors">7 Outlets</a>
+                <a href="#instagram-clicks" class="hover:text-amberGold-400 transition-colors">Instagram Clicks</a>
+                <a href="#testimonials" class="hover:text-amberGold-400 transition-colors">Reviews</a>
+            </nav>
+
+            <!-- Right CTA & Pre-order Counter -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <button onclick="scrollToReservationWithTray()" id="nav-tray-btn" class="relative p-2.5 sm:px-3.5 sm:py-2.5 rounded-full bg-espresso-800 border border-amberGold-400/30 text-cream-100 hover:border-amberGold-400 transition-all flex items-center gap-1.5 text-xs" title="Table Pre-Order Tray">
+                    <i data-lucide="utensils" class="w-4 h-4 text-amberGold-400"></i>
+                    <span class="hidden sm:inline font-medium">Table Tray</span>
+                    <span id="nav-tray-count" class="w-5 h-5 rounded-full bg-amberGold-400 text-espresso-950 font-bold text-[11px] flex items-center justify-center">0</span>
+                </button>
+
+                <a href="#reserve" class="bg-amberGold-400 hover:bg-amberGold-300 text-espresso-950 font-bold text-xs sm:text-sm px-4 sm:px-6 py-3 rounded-full shadow-warm transition-all duration-300 flex items-center gap-2 active:scale-95">
+                    <i data-lucide="calendar-check-2" class="w-4 h-4"></i>
+                    <span>Reserve Table</span>
+                </a>
+
+                <button id="mobile-menu-btn" aria-label="Open Menu" class="lg:hidden p-2.5 rounded-full bg-espresso-800 border border-amberGold-400/25 text-cream-100">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-espresso-950/98 backdrop-blur-2xl border-b border-amberGold-400/20 px-6 py-6 space-y-3">
+            <a href="#about" class="mobile-nav-link py-2.5 border-b border-white/10 flex items-center justify-between text-sm font-semibold text-cream-100">
+                <span>About Us & Ambiance</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-amberGold-400"></i>
+            </a>
+            <a href="#foodfolio" class="mobile-nav-link py-2.5 border-b border-white/10 flex items-center justify-between text-sm font-semibold text-cream-100">
+                <span>Foodfolio & Digital Menu</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-amberGold-400"></i>
+            </a>
+            <a href="#outlets" class="mobile-nav-link py-2.5 border-b border-white/10 flex items-center justify-between text-sm font-semibold text-cream-100">
+                <span>Our 7 Outlets (Thane, Ghatkopar, Mulund & More)</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-amberGold-400"></i>
+            </a>
+            <a href="#instagram-clicks" class="mobile-nav-link py-2.5 border-b border-white/10 flex items-center justify-between text-sm font-semibold text-cream-100">
+                <span>Instagram Clicks (@the_food_town_india)</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-amberGold-400"></i>
+            </a>
+            <a href="#testimonials" class="mobile-nav-link py-2.5 border-b border-white/10 flex items-center justify-between text-sm font-semibold text-cream-100">
+                <span>Guest Testimonials</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-amberGold-400"></i>
+            </a>
+            <a href="#reserve" class="mobile-nav-link pt-2 flex items-center justify-between text-sm font-bold text-amberGold-400">
+                <span>Your Table, Your Story — Reserve Now</span>
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- B. Multi-Slide Interactive Hero Showcase + Floating Quick-Book Bar -->
+    <section class="relative min-h-[88vh] flex flex-col justify-between overflow-hidden bg-espresso-950">
+        <!-- Slides Container -->
+        <div id="hero-slides-container" class="absolute inset-0 z-0">
+            <!-- Slide 0: Lebanese Mezze & Falafel Platter (From Video Slide 1) -->
+            <div class="hero-slide absolute inset-0 opacity-100 scale-100" data-slide="0">
+                <img 
+                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=85" 
+                    alt="The Food Town Lebanese Mezze & Global Spread" 
+                    class="w-full h-full object-cover object-center opacity-45"
+                    onerror="this.src='https://placehold.co/1920x1080/161412/D4A373?text=The+Food+Town+Mezze+Platter'"
+                />
+            </div>
+            <!-- Slide 1: Loaded US Nachos Wooden Platter (From Video Slide 2) -->
+            <div class="hero-slide absolute inset-0 opacity-0 scale-105 pointer-events-none" data-slide="1">
+                <img 
+                    src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=2000&q=85" 
+                    alt="Loaded US Nachos Platter at The Food Town" 
+                    class="w-full h-full object-cover object-center opacity-45"
+                    onerror="this.src='https://placehold.co/1920x1080/161412/D4A373?text=Loaded+US+Nachos+Platter'"
+                />
+            </div>
+            <!-- Slide 2: Aesthetic Rattan Lamps & Pink Neon Floral Ambiance -->
+            <div class="hero-slide absolute inset-0 opacity-0 scale-105 pointer-events-none" data-slide="2">
+                <img 
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=85" 
+                    alt="The Food Town Rattan Lamps & Floral Wall Ambiance" 
+                    class="w-full h-full object-cover object-center opacity-45"
+                    onerror="this.src='https://placehold.co/1920x1080/161412/D4A373?text=TFT+Aesthetic+Ambiance'"
+                />
+            </div>
+
+            <!-- Luxury Gradient Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-r from-espresso-950 via-espresso-950/75 to-espresso-950/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-transparent to-espresso-950/60"></div>
+        </div>
+
+        <!-- Main Hero Foreground Content -->
+        <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-12 my-auto">
+            <div class="max-w-3xl">
+                <!-- Dynamic Slide Tag -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-espresso-800/90 border border-amberGold-400/35 text-amberGold-300 text-xs font-semibold mb-6 backdrop-blur-md shadow-warm">
+                    <span class="w-2 h-2 rounded-full bg-amberGold-400"></span>
+                    <span id="hero-tag">THE TOWN YOU RUN AWAY TO • 7 OUTLETS IN MMR</span>
+                </div>
+
+                <!-- Dynamic Headline -->
+                <h1 id="hero-title" class="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold text-cream-100 tracking-tight leading-[1.06] mb-5 transition-all duration-500">
+                    The Food Town: Where <span class="italic font-normal text-amberGold-400">Flavors Rule</span> The Table!
+                </h1>
+
+                <!-- Dynamic Subheadline -->
+                <p id="hero-subtitle" class="text-base sm:text-lg md:text-xl text-cream-200/85 font-normal leading-relaxed mb-8 max-w-2xl">
+                    Indulge in dishes that redefine delicious, one plate at a time. Experience Indian, Western, Continental, Oriental & Fusion cuisine across our 7 iconic outlets.
+                </p>
+
+                <!-- Hero CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#reserve" class="bg-amberGold-400 hover:bg-amberGold-300 text-espresso-950 font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-warm transition-all flex items-center gap-2.5 group">
+                        <span>Reserve Your Table</span>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                    </a>
+                    <a href="#foodfolio" class="bg-espresso-800/85 hover:bg-espresso-700 text-cream-100 border border-amberGold-400/35 font-semibold text-sm sm:text-base px-7 py-4 rounded-full backdrop-blur-md transition-all flex items-center gap-2.5">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amberGold-400"></i>
+                        <span>Explore Foodfolio & Menu</span>
+                    </a>
+                </div>
+
+                <!-- Slide Controls & Indicators (Just like thefoodtown.in bottom bars, upgraded) -->
+                <div class="mt-10 flex items-center gap-4">
+                    <button onclick="setHeroSlide(0)" class="hero-dot h-1.5 w-12 rounded-full bg-amberGold-400 transition-all" aria-label="Slide 1"></button>
+                    <button onclick="setHeroSlide(1)" class="hero-dot h-1.5 w-8 rounded-full bg-white/30 hover:bg-white/60 transition-all" aria-label="Slide 2"></button>
+                    <button onclick="setHeroSlide(2)" class="hero-dot h-1.5 w-8 rounded-full bg-white/30 hover:bg-white/60 transition-all" aria-label="Slide 3"></button>
+                    <span id="hero-dish-caption" class="text-xs text-amberGold-300/90 font-medium ml-2 hidden sm:inline">
+                        Featured Plate: Lebanese Mezze, Falafel & Hummus Platter
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Quick-Book Bar at Bottom of Hero -->
+        <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-8">
+            <div class="bg-espresso-900/95 backdrop-blur-xl border border-amberGold-400/30 rounded-3xl p-4 sm:p-5 shadow-card">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-center">
+                    <!-- Quick Outlet -->
+                    <div class="bg-espresso-950/90 border border-white/10 rounded-2xl px-4 py-2.5">
+                        <label for="quick-outlet" class="block text-[10px] uppercase tracking-wider text-amberGold-400 font-semibold">Select Outlet (7)</label>
+                        <select id="quick-outlet" class="w-full bg-transparent text-cream-100 text-xs sm:text-sm font-medium focus:outline-none mt-0.5 cursor-pointer">
+                            <option value="Thane West (Panchpakhadi Flagship)" class="bg-espresso-900">Thane West — Panchpakhadi HQ</option>
+                            <option value="Ghatkopar (Pink Neon & Floral Lounge)" class="bg-espresso-900">Ghatkopar — Floral & Rattan Lounge</option>
+                            <option value="Mulund (Neon Pizza & Brick Bistro)" class="bg-espresso-900">Mulund — Brick & Wicker Bistro</option>
+                            <option value="Kalyan (Sunlit Bistro Lounge)" class="bg-espresso-900">Kalyan — Sunlit Bistro</option>
+                            <option value="Dombivali (Pop-Art & Ivy Dining)" class="bg-espresso-900">Dombivali — Pop-Art & Ivy Lounge</option>
+                            <option value="Bhiwandi (Turf Wall & Family Deck)" class="bg-espresso-900">Bhiwandi — Turf Wall Family Deck</option>
+                            <option value="Vashi (Navi Mumbai Lounge)" class="bg-espresso-900">Vashi — Navi Mumbai Lounge</option>
+                        </select>
+                    </div>
+
+                    <!-- Quick Date -->
+                    <div class="bg-espresso-950/90 border border-white/10 rounded-2xl px-4 py-2.5">
+                        <label for="quick-date" class="block text-[10px] uppercase tracking-wider text-amberGold-400 font-semibold">Dining Date</label>
+                        <input type="date" id="quick-date" class="w-full bg-transparent text-cream-100 text-xs sm:text-sm font-medium focus:outline-none mt-0.5">
+                    </div>
+
+                    <!-- Quick Time -->
+                    <div class="bg-espresso-950/90 border border-white/10 rounded-2xl px-4 py-2.5">
+                        <label for="quick-time" class="block text-[10px] uppercase tracking-wider text-amberGold-400 font-semibold">Time (11 AM – 12 AM)</label>
+                        <select id="quick-time" class="w-full bg-transparent text-cream-100 text-xs sm:text-sm font-medium focus:outline-none mt-0.5 cursor-pointer">
+                            <option value="01:00 PM (Lunch)" class="bg-espresso-900">01:00 PM — Lunch</option>
+                            <option value="04:30 PM (Evening Coffee & Snacks)" class="bg-espresso-900">04:30 PM — High Tea</option>
+                            <option value="07:30 PM (Prime Dinner)" selected class="bg-espresso-900">07:30 PM — Prime Dinner</option>
+                            <option value="09:00 PM (Late Dinner)" class="bg-espresso-900">09:00 PM — Late Dinner</option>
+                            <option value="10:30 PM (Midnight Cravings)" class="bg-espresso-900">10:30 PM — Late Night</option>
+                        </select>
+                    </div>
+
+                    <!-- Quick Guests -->
+                    <div class="bg-espresso-950/90 border border-white/10 rounded-2xl px-4 py-2.5">
+                        <label for="quick-guests" class="block text-[10px] uppercase tracking-wider text-amberGold-400 font-semibold">Party Size</label>
+                        <select id="quick-guests" class="w-full bg-transparent text-cream-100 text-xs sm:text-sm font-medium focus:outline-none mt-0.5 cursor-pointer">
+                            <option value="2 Guests (Cozy Table)" class="bg-espresso-900">2 Guests (Date Booth)</option>
+                            <option value="4 Guests (Family Booth)" selected class="bg-espresso-900">4 Guests (Family Booth)</option>
+                            <option value="6 Guests (Group Table)" class="bg-espresso-900">6 Guests (Group Table)</option>
+                            <option value="8+ Guests (Celebration)" class="bg-espresso-900">8+ Guests (Celebration)</option>
+                        </select>
+                    </div>
+
+                    <!-- Lock Table Button -->
+                    <button onclick="transferQuickBookToMain()" class="h-full w-full bg-amberGold-400 hover:bg-amberGold-300 text-espresso-950 font-bold text-xs sm:text-sm py-3.5 px-5 rounded-2xl shadow-warm transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span>Lock My Table →</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2. "About Us" & Aesthetic Ambiance Showcase -->
+    <section id="about" class="py-16 sm:py-20 bg-espresso-900 border-t border-amberGold-400/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-espresso-800 border border-amberGold-400/30 text-amberGold-300 text-xs uppercase tracking-[0.2em] font-semibold">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amberGold-400"></i>
+                        <span>About The Food Town • Aesthetic Dining</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-cream-100 tracking-tight leading-tight">
+                        Warm Rattan Glow, Lush Floral Walls & <span class="italic font-normal text-amberGold-400">5 Global Cuisines</span>
+                    </h2>
+                    <p class="text-cream-200/80 text-sm sm:text-base leading-relaxed">
+                        Designed as the ultimate urban sanctuary across Mumbai, Thane, and MMR, <strong class="text-cream-100">The Food Town (TFT)</strong> blends warm woven wicker chandeliers, lush botanical photo walls, and glowing neon art with an expansive 100% Vegetarian & Jain-friendly multi-cuisine menu spanning Indian, Western, Continental, Oriental, and Fusion plates.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="bg-espresso-950/90 border border-amberGold-400/25 rounded-2xl p-4">
+                            <p class="font-serif text-3xl font-bold text-amberGold-400">7</p>
+                            <p class="text-xs text-cream-200/75 mt-0.5">Outlets Across MMR</p>
+                        </div>
+                        <div class="bg-espresso-950/90 border border-amberGold-400/25 rounded-2xl p-4">
+                            <p class="font-serif text-3xl font-bold text-sage-400">100%</p>
+                            <p class="text-xs text-cream-200/75 mt-0.5">Veg & Jain Options</p>
+                        </div>
+                        <div class="bg-espresso-950/90 border border-amberGold-400/25 rounded-2xl p-4">
+                            <p class="font-serif text-3xl font-bold text-cream-100">16K+</p>
+                            <p class="text-xs text-cream-200/75 mt-0.5">Instagram Community</p>
+                        </div>
+                        <div class="bg-espresso-950/90 border border-amberGold-400/25 rounded-2xl p-4">
+                            <p class="font-serif text-3xl font-bold text-amberGold-300">5</p>
+                            <p class="text-xs text-cream-200/75 mt-0.5">Global Cuisines</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="rounded-3xl overflow-hidden border border-amberGold-400/30 aspect-[4/5] bg-espresso-950 shadow-card">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" alt="Warm Rattan Lamps & Neon Wall" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="rounded-3xl overflow-hidden border border-amberGold-400/30 aspect-[4/5] bg-espresso-950 shadow-card mt-6">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" alt="Botanical & Floral Dining Booths" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- C. Interactive "FOODFOLIO" & Curated Multi-Cuisine Menu (Warm Cream Section) -->
+    <section id="foodfolio" class="py-20 sm:py-24 bg-cream-100 text-espresso-900 relative culinary-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header matching & upgrading "FOODFOLIO" from video -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-espresso-900 text-amberGold-300 text-[11px] uppercase tracking-[0.22em] font-semibold mb-3">
+                        <i data-lucide="flame" class="w-3.5 h-3.5 text-amberGold-400"></i>
+                        <span>Indian • Western • Continental • Oriental • Fusion</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-6xl font-semibold text-espresso-950 tracking-tight">
+                        THE <span class="italic font-normal text-amberGold-600">FOODFOLIO</span> & MENU
+                    </h2>
+                    <p class="text-espresso-700 text-sm sm:text-base mt-2 max-w-2xl">
+                        Where every bite tells a story of exquisite flavors and artful presentations. Explore the exact signature plates from our kitchen and add your favorites to your Table Pre-Order Tray.
+                    </p>
+                </div>
+
+                <!-- Search + Pure Veg Toggle -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="relative flex-1 sm:w-60">
+                        <input 
+                            type="text" 
+                            id="menu-search" 
+                            oninput="handleMenuSearch(this.value)"
+                            placeholder="Search Sushi, Nachos, Biryani..." 
+                            class="w-full bg-white border border-espresso-900/15 rounded-full pl-10 pr-4 py-2.5 text-xs sm:text-sm text-espresso-900 placeholder-espresso-700/50 focus:outline-none focus:border-amberGold-600 shadow-sm"
+                        />
+                        <i data-lucide="search" class="w-4 h-4 text-espresso-700/60 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                    </div>
+
+                    <label for="veg-only-toggle" class="flex items-center gap-2.5 cursor-pointer select-none bg-white px-4 py-2.5 rounded-full border border-espresso-900/15 shadow-sm">
+                        <span class="w-3.5 h-3.5 border border-sage-600 flex items-center justify-center p-0.5">
+                            <span class="w-2 h-2 rounded-full bg-sage-600"></span>
+                        </span>
+                        <span class="text-xs font-bold text-espresso-900">Pure Veg</span>
+                        <input type="checkbox" id="veg-only-toggle" onchange="toggleVegFilter(this.checked)" class="sr-only peer">
+                        <div class="w-8 h-4 bg-espresso-900/20 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all relative peer-checked:bg-sage-600"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-8 border-b border-espresso-900/10">
+                <button onclick="setFoodfolioCategory('all')" data-cat="all" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-espresso-900 text-cream-100 shadow-sm">
+                    ✨ All Signature Dishes (12)
+                </button>
+                <button onclick="setFoodfolioCategory('foodfolio')" data-cat="foodfolio" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5">
+                    📸 Featured in Foodfolio
+                </button>
+                <button onclick="setFoodfolioCategory('continental')" data-cat="continental" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5">
+                    🌮 Lebanese, Mexican & Continental
+                </button>
+                <button onclick="setFoodfolioCategory('oriental')" data-cat="oriental" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5">
+                    🍣 Oriental, Sushi & Soups
+                </button>
+                <button onclick="setFoodfolioCategory('indian')" data-cat="indian" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5">
+                    🍲 Royal Indian & Fusion
+                </button>
+                <button onclick="setFoodfolioCategory('desserts')" data-cat="desserts" class="foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5">
+                    🍓 Desserts & Shakes
+                </button>
+            </div>
+
+            <!-- Interactive Foodfolio Visual Cards Grid -->
+            <div id="foodfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- D. Upgraded 7-Outlet Interactive Hub (Replacing Broken Directory Links on thefoodtown.in) -->
+    <section id="outlets" class="py-20 sm:py-24 bg-espresso-950 relative border-t border-amberGold-400/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-amberGold-400 text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
+                        7 Signature Destinations Across Mumbai, Thane & MMR
+                    </span>
+                    <h2 class="font-serif text-4xl sm:text-6xl font-semibold text-cream-100 tracking-tight">
+                        OUR <span class="italic font-normal text-amberGold-400">OUTLETS</span>
+                    </h2>
+                    <p class="text-cream-200/75 text-sm sm:text-base mt-2 max-w-2xl">
+                        From our lush pink neon floral wall in Ghatkopar and neon pizza brick lounge in Mulund to our flagship Panchpakhadi HQ in Thane—choose your nearest escape.
+                    </p>
+                </div>
+
+                <!-- Region Filter Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <button onclick="filterOutlets('all')" data-region="all" class="outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-bold bg-amberGold-400 text-espresso-950 transition-all">
+                        All 7 Outlets
+                    </button>
+                    <button onclick="filterOutlets('thane-central')" data-region="thane-central" class="outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-semibold bg-espresso-800 text-cream-200 border border-amberGold-400/25 hover:border-amberGold-400">
+                        Thane, Mulund & Ghatkopar
+                    </button>
+                    <button onclick="filterOutlets('kalyan-dombivli-bhiwandi')" data-region="kalyan-dombivli-bhiwandi" class="outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-semibold bg-espresso-800 text-cream-200 border border-amberGold-400/25 hover:border-amberGold-400">
+                        Kalyan, Dombivali & Bhiwandi
+                    </button>
+                    <button onclick="filterOutlets('navi-mumbai')" data-region="navi-mumbai" class="outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-semibold bg-espresso-800 text-cream-200 border border-amberGold-400/25 hover:border-amberGold-400">
+                        Navi Mumbai
+                    </button>
+                </div>
+            </div>
+
+            <!-- 7 Outlets Grid -->
+            <div id="outlets-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Populated dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- E. "INSTAGRAM CLICKS" Interactive Showcase (Upgraded from thefoodtown.in) -->
+    <section id="instagram-clicks" class="py-20 sm:py-24 bg-espresso-900 relative overflow-hidden border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-amberGold-400 text-xs uppercase tracking-[0.22em] font-semibold mb-2">
+                        <i data-lucide="camera" class="w-4 h-4"></i>
+                        <span>Viral Frames & Plates • @the_food_town_india</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-6xl font-semibold text-cream-100 tracking-tight">
+                        INSTAGRAM <span class="italic font-normal text-amberGold-400">CLICKS</span>
+                    </h2>
+                </div>
+
+                <!-- Live Instagram Handle Badge -->
+                <a href="https://www.instagram.com/the_food_town_india/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-4 bg-espresso-800 hover:bg-espresso-700 border border-amberGold-400/35 p-3 pr-6 rounded-2xl shadow-warm transition-all self-start lg:self-auto group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amberGold-500 via-pink-500 to-purple-600 p-0.5 shrink-0">
+                        <div class="w-full h-full bg-espresso-950 rounded-[10px] flex items-center justify-center">
+                            <i data-lucide="instagram" class="w-6 h-6 text-amberGold-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-sm sm:text-base text-cream-100">@the_food_town_india</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-sage-500/20 text-sage-400 border border-sage-400/30 font-semibold">16K+ Foodies</span>
+                        </div>
+                        <p class="text-xs text-cream-200/65 mt-0.5">Click to view our latest reels & tag us from your table!</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 4-Card Iconic Square/Bento Showcase matching the exact 4 Instagram Clicks in their video + Neon Wall -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Click 1: Kali Handi Dum Biryani ("THE ROYAL Delicacy") -->
+                <div class="group relative rounded-3xl overflow-hidden border border-amberGold-400/25 bg-espresso-950 aspect-[4/5] shadow-card">
+                    <img 
+                        src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=900&q=85" 
+                        alt="Kali Handi Dum Biryani - The Royal Delicacy" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-espresso-950/30 to-transparent"></div>
+                    <!-- Top TFT Stamp -->
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full bg-espresso-950/85 border border-amberGold-400/40 text-amberGold-300 text-[10px] font-bold uppercase tracking-wider">
+                            The Royal Delicacy
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-cream-100 text-espresso-950 font-serif font-extrabold text-[10px] flex items-center justify-center shadow">
+                            TFT
+                        </span>
+                    </div>
+                    <!-- Bottom Caption -->
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <h3 class="font-serif text-2xl font-semibold text-cream-100">Kali Handi Dum Biryani</h3>
+                        <p class="text-xs text-cream-200/75 mt-1">Slow-cooked in traditional black clay handi with saffron & whole spices.</p>
+                        <button onclick="quickAddFromInsta('biryani')" class="mt-3 text-xs font-bold text-amberGold-400 hover:text-amberGold-300 flex items-center gap-1">
+                            <span>+ Add to Table Pre-Order (₹490)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Click 2: Strawberry Chocolate Cup -->
+                <div class="group relative rounded-3xl overflow-hidden border border-amberGold-400/25 bg-espresso-950 aspect-[4/5] shadow-card">
+                    <img 
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85" 
+                        alt="Strawberry Chocolate Cup at The Food Town" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-espresso-950/30 to-transparent"></div>
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full bg-pink-500/25 border border-pink-400/40 text-pink-200 text-[10px] font-bold uppercase tracking-wider">
+                            Tableside Pour
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-cream-100 text-espresso-950 font-serif font-extrabold text-[10px] flex items-center justify-center shadow">
+                            TFT
+                        </span>
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <h3 class="font-serif text-2xl font-semibold text-cream-100">Strawberry Chocolate Cup</h3>
+                        <p class="text-xs text-cream-200/75 mt-1">Belgian dark chocolate cup brimming with fresh strawberries & berry coulis.</p>
+                        <button onclick="quickAddFromInsta('strawberry-cup')" class="mt-3 text-xs font-bold text-amberGold-400 hover:text-amberGold-300 flex items-center gap-1">
+                            <span>+ Add to Table Pre-Order (₹360)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Click 3: Mulund & Ghatkopar Neon Wall + Wicker Lamps Ambiance -->
+                <div class="group relative rounded-3xl overflow-hidden border border-amberGold-400/25 bg-espresso-950 aspect-[4/5] shadow-card">
+                    <img 
+                        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85" 
+                        alt="Mulund & Ghatkopar Neon Sign and Wicker Lamps" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-espresso-950/40 to-transparent"></div>
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full bg-amberGold-400/20 border border-amberGold-400/40 text-amberGold-300 text-[10px] font-bold uppercase tracking-wider">
+                            Mulund & Ghatkopar
+                        </span>
+                        <span class="font-neon text-xl neon-script">the food town</span>
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <h3 class="font-serif text-2xl font-semibold text-cream-100">Neon Art & Wicker Glow</h3>
+                        <p class="text-xs text-cream-200/75 mt-1">Exposed brick walls, glowing neon pizza art, lush planters & woven rattan lamps.</p>
+                        <a href="#reserve" class="mt-3 text-xs font-bold text-amberGold-400 hover:text-amberGold-300 flex items-center gap-1">
+                            <span>Reserve Neon Booth →</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Click 4: Loaded US Nachos ("Crunchy Delight!") -->
+                <div class="group relative rounded-3xl overflow-hidden border border-amberGold-400/25 bg-espresso-950 aspect-[4/5] shadow-card">
+                    <img 
+                        src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?auto=format&fit=crop&w=900&q=85" 
+                        alt="Loaded US Nachos - Crunchy Delight" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-espresso-950/30 to-transparent"></div>
+                    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full bg-sage-500/25 border border-sage-400/40 text-sage-300 text-[10px] font-bold uppercase tracking-wider">
+                            Crunchy Delight!
+                        </span>
+                        <span class="w-8 h-8 rounded-full bg-cream-100 text-espresso-950 font-serif font-extrabold text-[10px] flex items-center justify-center shadow">
+                            TFT
+                        </span>
+                    </div>
+                    <div class="absolute bottom-5 left-5 right-5">
+                        <h3 class="font-serif text-2xl font-semibold text-cream-100">Loaded US Nachos</h3>
+                        <p class="text-xs text-cream-200/75 mt-1">Served on our signature turquoise platter with guacamole, salsa & molten cheese.</p>
+                        <button onclick="quickAddFromInsta('nachos')" class="mt-3 text-xs font-bold text-amberGold-400 hover:text-amberGold-300 flex items-center gap-1">
+                            <span>+ Add to Table Pre-Order (₹420)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- G. Verified Guest Testimonials (Authentic Reviews from thefoodtown.in) -->
+    <section id="testimonials" class="py-20 sm:py-24 bg-espresso-900 relative border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-amberGold-400 text-xs uppercase tracking-[0.24em] font-semibold block mb-2">
+                    Loved by Thousands Across Thane, Ghatkopar, Mulund & Kalyan
+                </span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-semibold text-cream-100 tracking-tight">
+                    GUEST <span class="italic font-normal text-amberGold-400">TESTIMONIALS</span>
+                </h2>
+            </div>
+
+            <!-- 4 Authentic Testimonials from the Video -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Reviewer 1: Niharika Pawar -->
+                <div class="bg-espresso-950 border border-amberGold-400/25 rounded-3xl p-6 flex flex-col justify-between shadow-card hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-amberGold-400/20 border border-amberGold-400 flex items-center justify-center font-serif text-xl font-bold text-amberGold-300">
+                                    NP
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-semibold text-cream-100">Niharika Pawar</h3>
+                                    <span class="text-[11px] text-amberGold-400">Thane Flagship Diner</span>
+                                </div>
+                            </div>
+                            <i data-lucide="quote" class="w-6 h-6 text-amberGold-400/30"></i>
+                        </div>
+                        <p class="text-sm text-cream-200/85 leading-relaxed italic">
+                            "The Food Town is one of the best restaurants in Thane. Every dish we ordered had incredible presentation and flavor!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-amberGold-400 text-sm tracking-widest">★★★★★</span>
+                        <span class="text-[11px] text-sage-400 font-medium">Verified Guest</span>
+                    </div>
+                </div>
+
+                <!-- Reviewer 2: The Chess Nexus -->
+                <div class="bg-espresso-950 border border-amberGold-400/25 rounded-3xl p-6 flex flex-col justify-between shadow-card hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-espresso-800 border border-amberGold-400/50 flex items-center justify-center font-serif text-sm font-bold text-amberGold-300 text-center leading-tight">
+                                    CHESS<br>NEXUS
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-semibold text-cream-100">The Chess Nexus</h3>
+                                    <span class="text-[11px] text-amberGold-400">Food & Lifestyle Guide</span>
+                                </div>
+                            </div>
+                            <i data-lucide="quote" class="w-6 h-6 text-amberGold-400/30"></i>
+                        </div>
+                        <p class="text-sm text-cream-200/85 leading-relaxed italic">
+                            "Had the best food and service was amazing. Truly a benchmark for hospitality and multi-cuisine dining."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-amberGold-400 text-sm tracking-widest">★★★★★</span>
+                        <span class="text-[11px] text-sage-400 font-medium">Verified Review</span>
+                    </div>
+                </div>
+
+                <!-- Reviewer 3: Supriya Sule -->
+                <div class="bg-espresso-950 border border-amberGold-400/25 rounded-3xl p-6 flex flex-col justify-between shadow-card hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-sage-500/20 border border-sage-400 flex items-center justify-center font-serif text-xl font-bold text-sage-400">
+                                    SS
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-semibold text-cream-100">Supriya Sule</h3>
+                                    <span class="text-[11px] text-amberGold-400">Oriental Cuisine Lover</span>
+                                </div>
+                            </div>
+                            <i data-lucide="quote" class="w-6 h-6 text-amberGold-400/30"></i>
+                        </div>
+                        <p class="text-sm text-cream-200/85 leading-relaxed italic">
+                            "Try Talumein Soup, that's simply delicious! Warm, comforting, and packed with authentic Indo-Oriental flavors."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-amberGold-400 text-sm tracking-widest">★★★★☆</span>
+                        <button onclick="quickAddFromInsta('talumein')" class="text-[11px] text-amberGold-400 hover:underline font-semibold">+ Order Talumein Soup</button>
+                    </div>
+                </div>
+
+                <!-- Reviewer 4: Harsh Khondalay -->
+                <div class="bg-espresso-950 border border-amberGold-400/25 rounded-3xl p-6 flex flex-col justify-between shadow-card hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-full bg-amberGold-400/20 border border-amberGold-400 flex items-center justify-center font-serif text-xl font-bold text-amberGold-300">
+                                    HK
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-semibold text-cream-100">Harsh Khondalay</h3>
+                                    <span class="text-[11px] text-amberGold-400">Local Guide • 5★</span>
+                                </div>
+                            </div>
+                            <i data-lucide="quote" class="w-6 h-6 text-amberGold-400/30"></i>
+                        </div>
+                        <p class="text-sm text-cream-200/85 leading-relaxed italic">
+                            "Global flavors, perfect vibes, unforgettable dining. Whether it's Mexican nachos, sushi, or Indian handi, TFT nails it."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-amberGold-400 text-sm tracking-widest">★★★★★</span>
+                        <span class="text-[11px] text-sage-400 font-medium">Verified Guest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H. "YOUR TABLE, YOUR STORY — RESERVE NOW!" (Interactive Zero-Commission Booking Engine) -->
+    <section id="reserve" class="py-20 sm:py-24 bg-espresso-950 relative border-t border-amberGold-400/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Banner Upgrading their static "YOUR TABLE, YOUR STORY RESERVE NOW!" -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-espresso-900 border border-amberGold-400/35 text-amberGold-300 text-xs font-semibold mb-4">
+                    <span>MONDAY – SUNDAY</span>
+                    <span>•</span>
+                    <span>11:00 AM – 12:00 MIDNIGHT</span>
+                </div>
+                <h2 class="font-serif text-4xl sm:text-6xl font-semibold text-cream-100 tracking-tight uppercase">
+                    Your Table, Your Story <br />
+                    <span class="italic font-normal text-amberGold-400 capitalize">Reserve Now!</span>
+                </h2>
+                <p class="text-sm sm:text-base text-cream-200/75 mt-3">
+                    Lock your table at any of our 7 outlets with zero booking fees. Attach dishes from the Foodfolio to have your favorites prepped fresh upon arrival.
+                </p>
+            </div>
+
+            <div class="bg-espresso-900 border border-amberGold-400/35 rounded-[32px] p-6 sm:p-10 shadow-warm">
+                <form id="reservation-form" onsubmit="handleBookingSubmit(event)" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Left 7 Columns: Reservation Fields -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                            <span class="text-xs uppercase tracking-widest text-amberGold-400 font-bold">1. Select Outlet & Timing</span>
+                            <span id="selected-outlet-badge" class="text-xs text-sage-400 font-semibold flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-sage-400 animate-pulse"></span>
+                                Instant Confirmation Active
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Outlet Select -->
+                            <div class="sm:col-span-2">
+                                <label for="book-outlet" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Choose TFT Outlet *</label>
+                                <div class="relative">
+                                    <select id="book-outlet" required class="w-full appearance-none bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3.5 text-sm text-cream-100 focus:outline-none focus:border-amberGold-400">
+                                        <option value="Thane West (Panchpakhadi Flagship)">THANE WEST — Panchpakhadi, Bhakti Mandir Road (Flagship HQ)</option>
+                                        <option value="Ghatkopar (Pink Neon & Floral Lounge)">GHATKOPAR — Pink Neon & Floral Wall Lounge</option>
+                                        <option value="Mulund (Neon Pizza & Brick Bistro)">MULUND — Exposed Brick & Neon Pizza Bistro</option>
+                                        <option value="Kalyan (Sunlit Bistro Lounge)">KALYAN — Sunlit Window & Botanical Bistro</option>
+                                        <option value="Dombivali (Pop-Art & Ivy Dining)">DOMBIVALI — Pop-Art Mural & Trailing Ivy Lounge</option>
+                                        <option value="Bhiwandi (Turf Wall & Family Deck)">BHIWANDI — Green Turf Emblem & Family Deck</option>
+                                        <option value="Vashi (Navi Mumbai Lounge)">VASHI — Navi Mumbai Rattan Lounge</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-amberGold-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                            </div>
+
+                            <!-- Date -->
+                            <div>
+                                <label for="book-date" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Date *</label>
+                                <input type="date" id="book-date" required class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 focus:outline-none focus:border-amberGold-400">
+                            </div>
+
+                            <!-- Time (11 AM - 12 Midnight) -->
+                            <div>
+                                <label for="book-time" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Time Slot (11 AM – 12 AM) *</label>
+                                <select id="book-time" required class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 focus:outline-none focus:border-amberGold-400">
+                                    <option value="11:30 AM (Early Lunch)">11:30 AM — Early Lunch</option>
+                                    <option value="01:00 PM (Prime Lunch)">01:00 PM — Prime Lunch</option>
+                                    <option value="02:30 PM (Afternoon Dining)">02:30 PM — Afternoon Dining</option>
+                                    <option value="05:00 PM (Evening Coffee & Nachos)">05:00 PM — Evening Coffee & Platter</option>
+                                    <option value="07:30 PM (Prime Dinner)">07:30 PM — Prime Dinner</option>
+                                    <option value="08:30 PM (Dinner Glow)" selected>08:30 PM — Rattan & Neon Glow Dinner</option>
+                                    <option value="09:45 PM (Late Dinner)">09:45 PM — Late Dinner</option>
+                                    <option value="11:00 PM (Before Midnight)">11:00 PM — Late Night Supper</option>
+                                </select>
+                            </div>
+
+                            <!-- Guests -->
+                            <div>
+                                <label for="book-guests" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Number of Guests *</label>
+                                <select id="book-guests" required class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 focus:outline-none focus:border-amberGold-400">
+                                    <option value="2 Guests (Cozy Booth)">2 Guests (Date / Cozy Booth)</option>
+                                    <option value="4 Guests (Family Booth)" selected>3 – 4 Guests (Velvet / Bistro Booth)</option>
+                                    <option value="6 Guests (Rattan Chandelier Table)">5 – 6 Guests (Under Rattan Chandeliers)</option>
+                                    <option value="8-12 Guests (Celebration Table)">8 – 12 Guests (Birthday / Family Table)</option>
+                                    <option value="15+ Guests (Private Party Enquiry)">15+ Guests (Private Event / Kitty Party)</option>
+                                </select>
+                            </div>
+
+                            <!-- Ambience / Dietary Preference -->
+                            <div>
+                                <label for="book-vibe" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Table & Dietary Preference</label>
+                                <select id="book-vibe" class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 focus:outline-none focus:border-amberGold-400">
+                                    <option value="Pink Neon & Floral Wall Booth">🌸 Near Neon & Floral Photo Wall</option>
+                                    <option value="Under Woven Rattan Lamps">🏮 Under Woven Rattan Lamps</option>
+                                    <option value="Jain Preparation Requested">🌿 Jain Food Preparation Needed</option>
+                                    <option value="Birthday / Anniversary Table">🎂 Birthday / Anniversary Table</option>
+                                </select>
+                            </div>
+
+                            <!-- Guest Name -->
+                            <div>
+                                <label for="book-name" class="block text-xs font-semibold text-cream-200/85 mb-1.5">Your Name *</label>
+                                <input type="text" id="book-name" required placeholder="e.g., Rohan Deshmukh" class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 placeholder-cream-200/35 focus:outline-none focus:border-amberGold-400">
+                            </div>
+
+                            <!-- Guest Phone -->
+                            <div>
+                                <label for="book-phone" class="block text-xs font-semibold text-cream-200/85 mb-1.5">WhatsApp Mobile Number *</label>
+                                <input type="tel" id="book-phone" required placeholder="+91 98200 XXXXX" class="w-full bg-espresso-950 border border-amberGold-400/35 rounded-xl px-4 py-3 text-sm text-cream-100 placeholder-cream-200/35 focus:outline-none focus:border-amberGold-400">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right 5 Columns: Pre-Order Tray Summary & Submit CTAs -->
+                    <div class="lg:col-span-5 bg-espresso-950 border border-white/10 rounded-3xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="utensils" class="w-4 h-4 text-amberGold-400"></i>
+                                    <span class="text-xs uppercase tracking-widest text-amberGold-400 font-bold">2. Your Foodfolio Tray</span>
+                                </div>
+                                <button type="button" onclick="clearPreOrderTray()" class="text-[11px] text-cream-200/50 hover:text-terracotta-400">
+                                    Clear Tray
+                                </button>
+                            </div>
+
+                            <!-- Dynamic Pre-Order Items List -->
+                            <div id="preorder-tray-list" class="space-y-2.5 max-h-52 overflow-y-auto pr-1">
+                                <!-- Populated via JS -->
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-white/10 space-y-3">
+                            <div class="flex items-center justify-between text-xs text-cream-200/75">
+                                <span>Table Reservation Fee</span>
+                                <span class="text-sage-400 font-bold">₹0 (Complimentary Direct Booking)</span>
+                            </div>
+
+                            <button type="submit" class="w-full bg-amberGold-400 hover:bg-amberGold-300 text-espresso-950 font-bold text-sm sm:text-base py-4 px-6 rounded-xl shadow-warm transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="ticket" class="w-5 h-5"></i>
+                                <span>Generate Instant Table Pass</span>
+                            </button>
+
+                            <button type="button" onclick="sendReservationToTFTWhatsApp()" class="w-full bg-sage-600/25 hover:bg-sage-600/40 text-sage-400 border border-sage-400/40 font-semibold text-xs sm:text-sm py-3.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Confirm via TFT WhatsApp (+91 84338 45309)</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- I. Authentic Footer (Upgraded from thefoodtown.in with Real Thane HQ, Phone & Livin Foods) -->
+    <footer class="bg-cream-100 text-espresso-950 border-t border-espresso-900/15 pt-16 pb-12 culinary-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center pb-12 border-b border-espresso-900/15">
+                <!-- Left Column: Contacts (Exact Address & Phone from video) -->
+                <div class="space-y-3 text-center md:text-left">
+                    <h4 class="font-serif text-2xl font-bold text-espresso-950">Contacts & Flagship HQ</h4>
+                    <div class="flex items-start justify-center md:justify-start gap-3 text-xs sm:text-sm text-espresso-800 leading-relaxed">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-amberGold-600 shrink-0 mt-0.5"></i>
+                        <p>
+                            M-7, Dev Prayag Society, Bhakti Mandir Road,<br>
+                            Opposite Thanawala Garage, Panchpakhadi,<br>
+                            Thane (W) 400602
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-start gap-3 text-sm font-bold text-espresso-950 pt-1">
+                        <i data-lucide="phone" class="w-4 h-4 text-amberGold-600"></i>
+                        <a href="tel:08433845309" class="hover:text-amberGold-600 transition-colors">+91 84338 45309</a>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-start gap-3 text-xs font-semibold text-espresso-800">
+                        <i data-lucide="mail" class="w-4 h-4 text-amberGold-600"></i>
+                        <a href="mailto:info@thefoodtown.in" class="hover:text-amberGold-600 transition-colors">info@thefoodtown.in</a>
+                    </div>
+                </div>
+
+                <!-- Center Column: Authentic Circular TFT Seal + Delivery & Social Platforms -->
+                <div class="flex flex-col items-center text-center space-y-5">
+                    <div class="w-28 h-28 rounded-full bg-cream-50 border-2 border-amberGold-500 shadow-lg p-2 flex flex-col items-center justify-center">
+                        <div class="w-full h-full rounded-full border border-dashed border-espresso-900/50 flex flex-col items-center justify-center">
+                            <svg class="w-6 h-4 text-amberGold-600 mb-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 19h20v2H2v-2zm0-11l5 4 5-6 5 6 5-4v9H2V8z"/>
+                            </svg>
+                            <span class="font-serif font-extrabold text-2xl tracking-tight text-espresso-950">TFT</span>
+                            <span class="text-[7px] uppercase tracking-widest font-extrabold text-amberGold-600">THE FOOD TOWN</span>
+                        </div>
+                    </div>
+
+                    <!-- Swiggy, Zomato, Facebook, Instagram Links (As shown in thefoodtown.in footer) -->
+                    <div class="flex items-center gap-3">
+                        <a href="#foodfolio" title="Order on Zomato" class="px-3.5 py-2 rounded-full bg-red-600 text-white text-xs font-extrabold tracking-wide hover:opacity-90 transition-opacity shadow-sm">
+                            zomato
+                        </a>
+                        <a href="#foodfolio" title="Order on Swiggy" class="px-3.5 py-2 rounded-full bg-orange-500 text-white text-xs font-extrabold tracking-wide hover:opacity-90 transition-opacity shadow-sm">
+                            SWIGGY
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-espresso-900 text-cream-100 flex items-center justify-center hover:bg-amberGold-500 hover:text-espresso-950 transition-colors">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://www.instagram.com/the_food_town_india/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-espresso-900 text-cream-100 flex items-center justify-center hover:bg-amberGold-500 hover:text-espresso-950 transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Quick Links -->
+                <div class="space-y-3 text-center md:text-right">
+                    <h4 class="font-serif text-2xl font-bold text-espresso-950">Quick Links</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-espresso-800">
+                        <li><a href="#about" class="hover:text-amberGold-600 transition-colors">About Us</a></li>
+                        <li><a href="#foodfolio" class="hover:text-amberGold-600 transition-colors">Foodfolio & Menu</a></li>
+                        <li><a href="#outlets" class="hover:text-amberGold-600 transition-colors">Outlets (7 Locations)</a></li>
+                        <li><a href="#instagram-clicks" class="hover:text-amberGold-600 transition-colors">Instagram Clicks</a></li>
+                        <li><a href="#reserve" class="text-amberGold-600 hover:underline">Reserve Table</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright & Hours -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-espresso-700 font-medium gap-4">
+                <p>© <strong>The Food Town (TFT)</strong> • All 7 Outlets Open Monday – Sunday (11 AM – 12 Midnight)</p>
+                <p>Thane • Ghatkopar • Mulund • Kalyan • Dombivali • Bhiwandi • Vashi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Direct WhatsApp Concierge Button -->
+    <button onclick="sendReservationToTFTWhatsApp()" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-5 z-40 bg-sage-600 hover:bg-sage-500 text-cream-100 px-4 py-3 rounded-full shadow-card border border-sage-400/40 flex items-center gap-2 text-xs font-bold transition-all hover:scale-105">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">WhatsApp Desk</span>
+    </button>
+
+    <!-- Instant Digital Table Pass Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-espresso-950/85 backdrop-blur-md">
+        <div class="bg-espresso-900 border border-amberGold-400/50 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-warm relative">
+            <button onclick="closeBookingModal()" aria-label="Close Modal" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-espresso-800 text-cream-200 flex items-center justify-center hover:text-amberGold-400">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-sage-500/20 border border-sage-400/40 flex items-center justify-center text-sage-400">
+                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-amberGold-400 font-bold">TFT • Priority Reservation Desk</span>
+                    <h3 class="font-serif text-2xl font-bold text-cream-100">Table Pass Confirmed!</h3>
+                </div>
+            </div>
+
+            <div id="modal-ticket-details" class="my-5 bg-espresso-950 border border-amberGold-400/25 rounded-2xl p-4 space-y-2 text-xs">
+                <!-- Populated dynamically -->
+            </div>
+
+            <div class="flex flex-col gap-2.5">
+                <button onclick="sendReservationToTFTWhatsApp()" class="w-full bg-sage-600 hover:bg-sage-500 text-cream-100 font-bold text-xs sm:text-sm py-3.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Send Pass to TFT WhatsApp (084338 45309)</span>
+                </button>
+                <button onclick="closeBookingModal()" class="w-full bg-espresso-800 hover:bg-espresso-700 text-cream-200 font-medium text-xs py-3 rounded-xl transition-all">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application JavaScript -->
+    <script>
+        // 1. Hero Carousel Data (Matching exact headlines from thefoodtown.in video + conversion copy)
+        const heroSlidesData = [
+            {
+                tag: 'THE FOOD TOWN • WHERE FLAVORS RULE THE TABLE',
+                title: 'The Food Town: Where <span class="italic font-normal text-amberGold-400">Flavors Rule</span> The Table!',
+                subtitle: 'Indulge in dishes that redefine delicious, one plate at a time. Experience Indian, Western, Continental, Oriental & Fusion cuisine across 7 outlets.',
+                caption: 'Featured Plate: Lebanese Mezze, Crispy Falafel, Pita & Hummus Spread'
+            },
+            {
+                tag: 'ARTFUL PRESENTATIONS • 7 OUTLETS ACROSS MMR',
+                title: 'Where Flavors Meet Stories — <span class="italic font-normal text-amberGold-400">Welcome to TFT</span>',
+                subtitle: 'Where every bite tells a story of exquisite flavors and artful presentations—from our Loaded US Nachos platter to Tempura Crunch Sushi.',
+                caption: 'Featured Plate: Loaded US Nachos Platter with Cheese Fondue & Salsa'
+            },
+            {
+                tag: 'AESTHETIC AMBIANCE • MONDAY TO SUNDAY (11 AM – 12 MIDNIGHT)',
+                title: 'The Town You <span class="italic font-normal text-amberGold-400">Run Away To.</span>',
+                subtitle: 'Step into warm wicker lighting, glowing pink neon floral walls, and cozy velvet booths across Thane, Ghatkopar, Mulund, Kalyan, Dombivali, Bhiwandi & Vashi.',
+                caption: 'Featured Vibe: Signature Woven Rattan Chandeliers & Botanical Walls'
+            }
+        ];
+
+        let currentHeroSlide = 0;
+        let heroInterval = null;
+
+        function setHeroSlide(index) {
+            currentHeroSlide = index;
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+
+            slides.forEach((s, idx) => {
+                if (idx === index) {
+                    s.classList.remove('opacity-0', 'scale-105', 'pointer-events-none');
+                    s.classList.add('opacity-100', 'scale-100');
+                } else {
+                    s.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+                    s.classList.remove('opacity-100', 'scale-100');
+                }
+            });
+
+            dots.forEach((d, idx) => {
+                if (idx === index) {
+                    d.className = 'hero-dot h-1.5 w-12 rounded-full bg-amberGold-400 transition-all';
+                } else {
+                    d.className = 'hero-dot h-1.5 w-8 rounded-full bg-white/30 hover:bg-white/60 transition-all';
+                }
+            });
+
+            const data = heroSlidesData[index];
+            document.getElementById('hero-tag').textContent = data.tag;
+            document.getElementById('hero-title').innerHTML = data.title;
+            document.getElementById('hero-subtitle').textContent = data.subtitle;
+            document.getElementById('hero-dish-caption').textContent = data.caption;
+        }
+
+        // 2. Authentic Foodfolio & Digital Menu Data (From thefoodtown.in video)
+        const foodfolioDishes = [
+            {
+                id: 'mezze',
+                name: 'Lebanese Mezze & Falafel Platter',
+                category: 'continental',
+                inFoodfolio: true,
+                price: 540,
+                isVeg: true,
+                badge: 'Hero Slide #1 Plate',
+                image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+                desc: 'Creamy chickpea hummus with paprika oil swirl, warm pita bread, herb falafel, golden fries, olives, tzatziki & fiery harissa.'
+            },
+            {
+                id: 'nachos',
+                name: 'Loaded US Nachos Platter ("Crunchy Delight!")',
+                category: 'continental',
+                inFoodfolio: true,
+                price: 420,
+                isVeg: true,
+                badge: 'Hero Slide #2 & Insta Hit',
+                image: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=800&q=80',
+                desc: 'Crisp corn tortilla chips layered with melted cheese sauce, roasted corn, bell peppers, house salsa & warm cheddar fondue.'
+            },
+            {
+                id: 'sushi',
+                name: 'Tempura Crunch Uramaki Sushi Platter',
+                category: 'oriental',
+                inFoodfolio: true,
+                price: 580,
+                isVeg: true,
+                badge: 'Foodfolio Highlight',
+                image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80',
+                desc: 'Hand-rolled sushi topped with spicy sriracha mayo drizzle, tempura crisps, pickled ginger, wasabi & soy mirin.'
+            },
+            {
+                id: 'biryani',
+                name: 'Kali Handi Dum Biryani ("The Royal Delicacy")',
+                category: 'indian',
+                inFoodfolio: true,
+                price: 490,
+                isVeg: true,
+                badge: 'The Royal Delicacy',
+                image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+                desc: 'Long-grain aged basmati slow-cooked on dum in a traditional black clay handi with saffron, caramelized onions & mint raita.'
+            },
+            {
+                id: 'pav-bhaji-skillet',
+                name: 'Cast-Iron Bombay Pav Bhaji & Cigar Rolls',
+                category: 'indian',
+                inFoodfolio: true,
+                price: 390,
+                isVeg: true,
+                badge: 'Foodfolio Platter',
+                image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80',
+                desc: 'Spiced buttery bhaji served sizzling in a cast-iron skillet alongside herb-buttered pav sliders and crispy cheese cigars.'
+            },
+            {
+                id: 'paneer-steak',
+                name: 'Pesto Layered Grilled Cottage Cheese Steak',
+                category: 'continental',
+                inFoodfolio: true,
+                price: 460,
+                isVeg: true,
+                badge: 'Turquoise Plate Special',
+                image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
+                desc: 'Basil pesto-stuffed cottage cheese steak served on our signature turquoise stoneware with roasted cherry tomatoes & jus.'
+            },
+            {
+                id: 'talumein',
+                name: 'Signature Indo-Oriental Talumein Soup',
+                category: 'oriental',
+                inFoodfolio: false,
+                price: 280,
+                isVeg: true,
+                badge: '★ Supriya Sule’s Pick',
+                image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
+                desc: 'Aromatic vegetable & noodle broth loaded with bok choy, mushrooms, baby corn, and burnt garlic—a guest favorite.'
+            },
+            {
+                id: 'strawberry-cup',
+                name: 'Molten Strawberry Belgian Chocolate Cup',
+                category: 'desserts',
+                inFoodfolio: true,
+                price: 360,
+                isVeg: true,
+                badge: 'Instagram Clicks Star',
+                image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
+                desc: 'Artisanal dark chocolate cup filled with fresh Mahabaleshwar strawberries and warm strawberry compote.'
+            },
+            {
+                id: 'tacos-platter',
+                name: 'Mexican Soft Shell Tacos & Guacamole Trio',
+                category: 'continental',
+                inFoodfolio: true,
+                price: 440,
+                isVeg: true,
+                badge: 'Foodfolio Favorite',
+                image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
+                desc: 'Three soft tortillas stuffed with chipotle beans, fajita peppers, sour cream, house salad, and trio of dips.'
+            }
+        ];
+
+        // 3. Authentic 7 Outlets Data (Matching exact outlets & interior photos seen in thefoodtown.in video)
+        const outletsList = [
+            {
+                id: 'thane',
+                name: 'THANE WEST (Flagship HQ)',
+                region: 'thane-central',
+                locationTag: 'Panchpakhadi, Thane (W)',
+                address: 'M-7, Dev Prayag Society, Bhakti Mandir Road, Opp. Thanawala Garage, Panchpakhadi, Thane (W) 400602',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Warm Wood Paneling, Botanical Ceiling & Plush Grey-Blue Booths',
+                image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Thane West (Panchpakhadi Flagship)',
+                mapQuery: 'The+Food+Town+Panchpakhadi+Thane+West'
+            },
+            {
+                id: 'ghatkopar',
+                name: 'GHATKOPAR',
+                region: 'thane-central',
+                locationTag: 'Ghatkopar, Mumbai',
+                address: 'Prime Highstreet Lounge, Near Vikrant Circle, Ghatkopar, Mumbai',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Iconic Pink Neon "the food town" Script Wall & Woven Rattan Lamps',
+                image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Ghatkopar (Pink Neon & Floral Lounge)',
+                mapQuery: 'The+Food+Town+Ghatkopar+Mumbai'
+            },
+            {
+                id: 'mulund',
+                name: 'MULUND',
+                region: 'thane-central',
+                locationTag: 'Mulund, Mumbai',
+                address: 'LBS Marg Dining Corridor, Mulund West, Mumbai',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Exposed Brick Wall, Neon Pizza Slice Art & Hanging Wicker Baskets',
+                image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Mulund (Neon Pizza & Brick Bistro)',
+                mapQuery: 'The+Food+Town+Mulund+Mumbai'
+            },
+            {
+                id: 'kalyan',
+                name: 'KALYAN',
+                region: 'kalyan-dombivli-bhiwandi',
+                locationTag: 'Kalyan, MMR',
+                address: 'Khadakpada Dining Boulevard, Kalyan West',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Sunlit Floor-to-Ceiling Windows, White Brick Gallery & Bistro Seating',
+                image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Kalyan (Sunlit Bistro Lounge)',
+                mapQuery: 'The+Food+Town+Kalyan'
+            },
+            {
+                id: 'dombivali',
+                name: 'DOMBIVALI',
+                region: 'kalyan-dombivli-bhiwandi',
+                locationTag: 'Dombivali, MMR',
+                address: 'Central Dining Hub, Dombivali East',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Vibrant Pop-Art Mural Wall, Terracotta Brick & Trailing Ivy Ceiling',
+                image: 'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Dombivali (Pop-Art & Ivy Dining)',
+                mapQuery: 'The+Food+Town+Dombivli'
+            },
+            {
+                id: 'bhiwandi',
+                name: 'BHIWANDI',
+                region: 'kalyan-dombivli-bhiwandi',
+                locationTag: 'Bhiwandi, MMR',
+                address: 'Kalyan-Bhiwandi Bypass Dining Plaza, Bhiwandi',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Lush Green Turf Wall with Illuminated Circular TFT Seal & Family Booths',
+                image: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Bhiwandi (Turf Wall & Family Deck)',
+                mapQuery: 'The+Food+Town+Bhiwandi'
+            },
+            {
+                id: 'vashi',
+                name: 'VASHI (Navi Mumbai)',
+                region: 'navi-mumbai',
+                locationTag: 'Vashi, Navi Mumbai',
+                address: 'Palm Beach Galleria Corridor, Vashi, Navi Mumbai',
+                cuisines: 'Indian • Western • Continental • Oriental • Fusion',
+                vibe: 'Contemporary Botanical Lounge & Celebration Dining Deck',
+                image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80',
+                bookingVal: 'Vashi (Navi Mumbai Lounge)',
+                mapQuery: 'The+Food+Town+Vashi+Navi+Mumbai'
+            }
+        ];
+
+        // State for Menu & Pre-Order Tray
+        let activeCategory = 'all';
+        let vegOnlyFilter = false;
+        let searchQuery = '';
+        let preOrderTray = [
+            { id: 'nachos', name: 'Loaded US Nachos Platter', price: 420, qty: 1 }
+        ];
+
+        // Render Foodfolio & Menu Cards
+        function renderFoodfolio() {
+            const grid = document.getElementById('foodfolio-grid');
+            const filtered = foodfolioDishes.filter(dish => {
+                const matchCat = activeCategory === 'all' 
+                    ? true 
+                    : (activeCategory === 'foodfolio' ? dish.inFoodfolio : dish.category === activeCategory);
+                const matchVeg = vegOnlyFilter ? dish.isVeg : true;
+                const matchSearch = dish.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    dish.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCat && matchVeg && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-white rounded-3xl border border-espresso-900/10">
+                        <p class="font-serif text-2xl text-espresso-900">No dishes match your filter.</p>
+                        <button onclick="resetMenuFilters()" class="mt-3 text-xs font-bold text-amberGold-600 underline">Reset All Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(dish => `
+                <div class="bg-white rounded-3xl overflow-hidden border border-espresso-900/10 hover:border-amberGold-500 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-espresso-900">
+                            <img 
+                                src="${dish.image}" 
+                                alt="${dish.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div class="absolute top-3 left-3 flex items-center gap-2">
+                                <span class="px-3 py-1 rounded-full bg-espresso-950/85 backdrop-blur-md text-amberGold-300 text-[10px] font-bold uppercase tracking-wider">
+                                    ${dish.badge}
+                                </span>
+                            </div>
+                            <div class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-cream-100 text-espresso-950 font-serif font-extrabold text-lg shadow">
+                                ₹${dish.price}
+                            </div>
+                        </div>
+
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <span class="w-4 h-4 border border-sage-600 flex items-center justify-center p-0.5 shrink-0">
+                                    <span class="w-2 h-2 rounded-full bg-sage-600"></span>
+                                </span>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-sage-600">Pure Veg Available • Jain Prep Option</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-espresso-950 leading-snug">
+                                ${dish.name}
+                            </h3>
+                            <p class="text-xs text-espresso-700/85 mt-2 leading-relaxed">
+                                ${dish.desc}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-2">
+                        <button onclick="addToPreOrder('${dish.id}')" class="w-full bg-espresso-900 hover:bg-amberGold-500 text-cream-100 hover:text-espresso-950 font-bold text-xs py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                            <span>Add to Table Pre-Order (₹${dish.price})</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function setFoodfolioCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.foodfolio-tab').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-espresso-900 text-cream-100 shadow-sm';
+                } else {
+                    btn.className = 'foodfolio-tab shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-espresso-800 border border-espresso-900/10 hover:bg-espresso-900/5';
+                }
+            });
+            renderFoodfolio();
+        }
+
+        function toggleVegFilter(checked) {
+            vegOnlyFilter = checked;
+            renderFoodfolio();
+        }
+
+        function handleMenuSearch(val) {
+            searchQuery = val;
+            renderFoodfolio();
+        }
+
+        function resetMenuFilters() {
+            activeCategory = 'all';
+            vegOnlyFilter = false;
+            searchQuery = '';
+            document.getElementById('menu-search').value = '';
+            document.getElementById('veg-only-toggle').checked = false;
+            setFoodfolioCategory('all');
+        }
+
+        // Pre-Order Tray Logic
+        function addToPreOrder(dishId) {
+            const dish = foodfolioDishes.find(d => d.id === dishId);
+            if (!dish) return;
+            const existing = preOrderTray.find(item => item.id === dishId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                preOrderTray.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
+            }
+            updatePreOrderTrayUI();
+        }
+
+        function quickAddFromInsta(dishId) {
+            addToPreOrder(dishId);
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function removePreOrderItem(dishId) {
+            preOrderTray = preOrderTray.filter(i => i.id !== dishId);
+            updatePreOrderTrayUI();
+        }
+
+        function clearPreOrderTray() {
+            preOrderTray = [];
+            updatePreOrderTrayUI();
+        }
+
+        function updatePreOrderTrayUI() {
+            const countEl = document.getElementById('nav-tray-count');
+            const totalItems = preOrderTray.reduce((sum, i) => sum + i.qty, 0);
+            if (countEl) countEl.textContent = totalItems;
+
+            const listEl = document.getElementById('preorder-tray-list');
+            if (!listEl) return;
+
+            if (preOrderTray.length === 0) {
+                listEl.innerHTML = `
+                    <div class="text-center py-6 text-xs text-cream-200/50 border border-dashed border-white/10 rounded-2xl">
+                        No dishes pre-selected yet. Click "+ Add to Table Pre-Order" on any Foodfolio dish above!
+                    </div>
+                `;
+                return;
+            }
+
+            listEl.innerHTML = preOrderTray.map(item => `
+                <div class="flex items-center justify-between bg-espresso-900 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs">
+                    <div>
+                        <span class="font-semibold text-cream-100">${item.name}</span>
+                        <span class="text-amberGold-400 font-bold ml-1.5">× ${item.qty}</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-cream-200 font-semibold">₹${item.price * item.qty}</span>
+                        <button type="button" onclick="removePreOrderItem('${item.id}')" class="text-cream-200/40 hover:text-terracotta-400">
+                            ×
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function scrollToReservationWithTray() {
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Render 7 Outlets Cards (Upgrading thefoodtown.in "OUR OUTLETS" cards)
+        function renderOutlets(region = 'all') {
+            const grid = document.getElementById('outlets-grid');
+            const filtered = region === 'all' ? outletsList : outletsList.filter(o => o.region === region);
+
+            grid.innerHTML = filtered.map(outlet => `
+                <div class="bg-espresso-900 border border-amberGold-400/25 hover:border-amberGold-400 rounded-3xl overflow-hidden flex flex-col justify-between shadow-card group transition-all duration-300">
+                    <div>
+                        <!-- Outlet Interior Photo with Star & "THE FOOD TOWN" Watermark just like video -->
+                        <div class="relative h-56 overflow-hidden">
+                            <img 
+                                src="${outlet.image}" 
+                                alt="${outlet.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-transparent to-black/30"></div>
+                            <!-- Top-left Gold Star Ribbon from video -->
+                            <div class="absolute top-3 left-3 w-8 h-8 rounded-lg bg-amberGold-400 text-espresso-950 flex items-center justify-center shadow">
+                                ★
+                            </div>
+                            <div class="absolute bottom-3 right-4 text-xs tracking-[0.2em] font-semibold uppercase text-cream-100/90 drop-shadow">
+                                THE FOOD TOWN
+                            </div>
+                        </div>
+
+                        <!-- Outlet Details -->
+                        <div class="p-6">
+                            <div class="flex items-center justify-between gap-2">
+                                <h3 class="font-serif text-2xl font-bold text-cream-100 tracking-wide">${outlet.name}</h3>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-xs text-amberGold-400 font-medium mt-1">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>
+                                <span>${outlet.locationTag}</span>
+                            </div>
+
+                            <p class="text-xs text-cream-200/70 mt-2.5 leading-relaxed">
+                                ${outlet.address}
+                            </p>
+
+                            <!-- Upgraded Cuisines & Vibe Block (Fixing the blank "-" in their current site) -->
+                            <div class="mt-4 pt-3.5 border-t border-white/10 space-y-2 text-xs">
+                                <div>
+                                    <span class="text-[10px] uppercase tracking-widest text-amberGold-400 font-bold block">• CUISINES:</span>
+                                    <span class="text-cream-100 font-medium">${outlet.cuisines}</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] uppercase tracking-widest text-sage-400 font-bold block">• SIGNATURE AMBIANCE:</span>
+                                    <span class="text-cream-200/80">${outlet.vibe}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Action Buttons -->
+                    <div class="px-6 pb-6 pt-2 grid grid-cols-2 gap-3">
+                        <a href="https://www.google.com/maps/search/?api=1&query=${outlet.mapQuery}" target="_blank" rel="noopener noreferrer" class="bg-espresso-800 hover:bg-espresso-700 text-cream-100 border border-white/10 text-xs font-semibold py-3 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-all">
+                            <i data-lucide="navigation" class="w-3.5 h-3.5 text-amberGold-400"></i>
+                            <span>Directions</span>
+                        </a>
+                        <button onclick="selectOutletForBooking('${outlet.bookingVal}')" class="bg-amberGold-400 hover:bg-amberGold-300 text-espresso-950 text-xs font-extrabold uppercase tracking-wider py-3 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-sm">
+                            <span>Book Outlet</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function filterOutlets(region) {
+            document.querySelectorAll('.outlet-filter-btn').forEach(btn => {
+                if (btn.dataset.region === region) {
+                    btn.className = 'outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-bold bg-amberGold-400 text-espresso-950 transition-all';
+                } else {
+                    btn.className = 'outlet-filter-btn shrink-0 px-4 py-2.5 rounded-full text-xs font-semibold bg-espresso-800 text-cream-200 border border-amberGold-400/25 hover:border-amberGold-400';
+                }
+            });
+            renderOutlets(region);
+        }
+
+        function selectOutletForBooking(bookingVal) {
+            const select = document.getElementById('book-outlet');
+            if (select) select.value = bookingVal;
+            const badge = document.getElementById('selected-outlet-badge');
+            if (badge) {
+                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-amberGold-400 animate-ping"></span> Selected: ${bookingVal.split('(')[0]}`;
+            }
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function transferQuickBookToMain() {
+            document.getElementById('book-outlet').value = document.getElementById('quick-outlet').value;
+            document.getElementById('book-date').value = document.getElementById('quick-date').value;
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('book-name').focus();
+        }
+
+        // Reservation Form & Real TFT WhatsApp Integration (+91 84338 45309)
+        function getReservationPayload() {
+            const trayText = preOrderTray.length > 0
+                ? preOrderTray.map(i => `${i.name} (x${i.qty})`).join(', ')
+                : 'To be ordered at the table';
+
+            return {
+                outlet: document.getElementById('book-outlet').value,
+                date: document.getElementById('book-date').value,
+                time: document.getElementById('book-time').value,
+                guests: document.getElementById('book-guests').value,
+                vibe: document.getElementById('book-vibe').value,
+                name: document.getElementById('book-name').value.trim() || 'Valued Guest',
+                phone: document.getElementById('book-phone').value.trim() || 'Not Provided',
+                dishes: trayText
+            };
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const d = getReservationPayload();
+            const passId = 'TFT-' + Math.floor(10000 + Math.random() * 90000);
+
+            document.getElementById('modal-ticket-details').innerHTML = `
+                <div class="flex justify-between py-1 border-b border-white/10">
+                    <span class="text-cream-200/60">Pass ID</span>
+                    <span class="font-mono font-bold text-amberGold-400">${passId}</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span class="text-cream-200/60">Outlet</span>
+                    <span class="font-semibold text-cream-100 text-right">${d.outlet}</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span class="text-cream-200/60">Date & Time</span>
+                    <span class="font-semibold text-cream-100">${d.date} • ${d.time}</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span class="text-cream-200/60">Guests & Vibe</span>
+                    <span class="text-sage-400 font-medium text-right">${d.guests} (${d.vibe})</span>
+                </div>
+                <div class="py-1 border-t border-white/10">
+                    <span class="text-cream-200/60 block mb-0.5">Pre-Selected Foodfolio Dishes:</span>
+                    <span class="text-amberGold-300 font-medium">${d.dishes}</span>
+                </div>
+                <div class="flex justify-between pt-1.5 border-t border-white/10">
+                    <span class="text-cream-200/60">Guest</span>
+                    <span class="font-bold text-cream-100">${d.name} (${d.phone})</span>
+                </div>
+            `;
+
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function sendReservationToTFTWhatsApp() {
+            const d = getReservationPayload();
+            const msg = `Hello *TFT | The Food Town*! ✨%0A%0AI would like to reserve a table:%0A📍 *Outlet:* ${d.outlet}%0A📅 *Date:* ${d.date}%0A⏰ *Time:* ${d.time}%0A👥 *Guests:* ${d.guests}%0A🏮 *Preference:* ${d.vibe}%0A🍽️ *Pre-Order Dishes:* ${d.dishes}%0A👤 *Guest Name:* ${d.name}%0A📞 *Contact:* ${d.phone}%0A%0APlease confirm my table reservation!`;
+            window.open(`https://wa.me/918433845309?text=${msg}`, '_blank');
+        }
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            ['book-date', 'quick-date'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.value = today;
+                    el.min = today;
+                }
+            });
+
+            // Mobile Drawer
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+                });
+            }
+
+            // Auto-cycle Hero Slides every 5.5 seconds
+            heroInterval = setInterval(() => {
+                const next = (currentHeroSlide + 1) % heroSlidesData.length;
+                setHeroSlide(next);
+            }, 5500);
+
+            renderFoodfolio();
+            renderOutlets('all');
+            updatePreOrderTrayUI();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
